@@ -12,8 +12,9 @@ FOR %F IN ("%SystemRoot%\servicing\Packages\Microsoft-Windows-GroupPolicy-Client
 
 4. Depois de concluir o primeiro passo, refaça o procedimento 1. e 2.
 5. Cole a segunda linha de comando abaixo para finalizar a instalação
-6. Reinicie o computador
 
 ```powershell
 FOR %F IN ("%SystemRoot%\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~*.mum") DO (DISM /Online /NoRestart /Add-Package:"%F")
 ```
+
+6. Reinicie o computador
