@@ -1,12 +1,19 @@
-# ativando-gpedit
-Como ativar o gpedit.msc no windows
+## Instalando o GPEDIT em máquinas de versões antigas
 
-1 - Abra o CMD como administrador e em seguida execute o seguinte comando:
+### Tutorial da instalação
 
+1. Na tecla do Windows pesquise por `cmd`
+2. Execute ele em modo administrador
+3. Cole a linha de comando abaixo para executar o Script no CMD
+
+```powershell
 FOR %F IN ("%SystemRoot%\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~*.mum") DO (DISM /Online /NoRestart /Add-Package:"%F")
+```
 
-2 - Após concluir o primeiro passo execute o ultimo comando a seguir:
+4. Depois de concluir o primeiro passo, refaça o procedimento 1. e 2.
+5. Cole a segunda linha de comando abaixo para finalizar a instalação
+6. Reinicie o computador
 
+```powershell
 FOR %F IN ("%SystemRoot%\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~*.mum") DO (DISM /Online /NoRestart /Add-Package:"%F")
-
-Pronto, seu computador estará pronto para usar o gpedit.msc
+```
